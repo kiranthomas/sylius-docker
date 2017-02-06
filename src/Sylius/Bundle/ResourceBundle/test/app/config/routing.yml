@@ -1,0 +1,8 @@
+app_book:
+    resource: |
+        alias: app.book
+    type: sylius.resource_api
+
+app_versioned_book:
+    resource: "versioned_routing.yml"
+    prefix: /v{version}

@@ -1,0 +1,12 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+imports:
+    - { resource: "@SyliusApiBundle/Resources/config/grids/product.yml" }
+    - { resource: "@SyliusApiBundle/Resources/config/app/fixtures.yml" }
+
+sylius_api:
+    resources:
+        api_user:
+            classes:
+                model: "%sylius.model.admin_user.class%"

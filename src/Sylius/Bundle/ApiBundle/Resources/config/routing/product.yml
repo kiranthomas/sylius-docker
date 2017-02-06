@@ -1,0 +1,11 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+sylius_api_product:
+    resource: |
+        alias: sylius.product
+        section: api
+        grid: sylius_api_product
+        form: Sylius\Bundle\ApiBundle\Form\Type\ProductType
+        serialization_version: $version
+    type: sylius.resource_api
