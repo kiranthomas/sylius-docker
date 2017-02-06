@@ -27,6 +27,10 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install gd \
     && docker-php-ext-install zip
 
+# Install Node.js tools
+RUN ln -s /usr/bin/nodejs /usr/bin/node
+RUN npm install -g gulp bower
+
 COPY php.ini        /usr/local/etc/php/conf.d/
 COPY default.conf    /usr/local/etc/php-fpm.d/www.conf
 
