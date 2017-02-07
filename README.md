@@ -20,7 +20,7 @@ $ docker exec -it sylius_php composer install
 
 ```
 
-adjust _parameters.yml_
+_adjust _parameters.yml_
 
 Install sylius
 
