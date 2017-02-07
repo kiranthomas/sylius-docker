@@ -12,7 +12,7 @@ $ docker-compose up -d
 
 ```
 
-_Install the dependencies _
+_Install the dependencies_
 
 ```bash
 
@@ -20,7 +20,7 @@ $ docker exec -it sylius_php composer install
 
 ```
 
-_adjust _parameters.yml_
+adjust _parameters.yml_
 
 Install sylius
 
