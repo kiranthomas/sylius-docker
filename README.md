@@ -10,13 +10,21 @@ Then, run
 
 $ docker-compose up -d
 
+```
+
 _Install the dependencies _
+
+```bash
 
 $ docker exec -it sylius_php composer install
 
-adjust the _parameters.yml_
+```
+
+adjust _parameters.yml_
 
 Install sylius
+
+```bash
 
 $ docker exec -it sylius_php php bin/console sylius:install
 
@@ -24,10 +32,12 @@ $ docker exec -it sylius_php npm install
 
 $ docker exec -it sylius_php npm run gulp
 
+```
+
 open _http://localhost:8080/app_dev.php_
 
 
-```
+
 
 
 
