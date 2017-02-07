@@ -1,28 +1,35 @@
-Docker - Sylius
+**Docker - Sylius**
 
-NGINX-PHP FPM-MYSQL
+_NGINX-PHP FPM-MYSQL_
 
-Clone this repository or place docker-compose.yml file and docker folder inside the Sylius root directory.
+Clone this repository or place _docker-compose.yml_ file and _docker_ folder inside the Sylius root directory.
 
 Then, run
 
-docker-compose up -d
+```bash
 
-Install the dependencies 
+$ docker-compose up -d
 
-docker exec -it sylius_php composer install
+_Install the dependencies _
 
-adjust the parameters to connect to db
+$ docker exec -it sylius_php composer install
 
-Install sylius dev
+adjust the _parameters.yml_
 
-docker exec -it sylius_php php bin/console sylius:install
+Install sylius
 
-docker exec -it sylius_php npm install
+$ docker exec -it sylius_php php bin/console sylius:install
 
-docker exec -it sylius_php npm run gulp
+$ docker exec -it sylius_php npm install
 
-visit http://localhost:8080/app_dev.php
+$ docker exec -it sylius_php npm run gulp
+
+open _http://localhost:8080/app_dev.php_
+
+
+```
+
+
 
 
 
