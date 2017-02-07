@@ -27,7 +27,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install gd \
     && docker-php-ext-install zip
 
-RUN curl -sL https://deb.nodesource.com/setup_5.x | bash - && \
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
   apt-get install -y nodejs git &&\
   npm install -g bower &&\
   npm install -g grunt &&\
