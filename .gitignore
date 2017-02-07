@@ -37,3 +37,4 @@
 /phpspec.yml
 .idea
 .travis.yml
+/docker/mysql

@@ -3,32 +3,36 @@ version: '2'
 services:
   nginx:
     image: nginx
+    container_name: sylius_nginx
     ports:
-      - 8086:80
+      - "8080:80"
     volumes:
-      - ./:/var/www/sylius
+      - ./:/var/www/html
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
     links:
       - fpm
-      - varnish
+#      - varnish
 
   fpm:
     build: docker/php-fpm/
+    container_name: sylius_php
     links:
       - mysql
     volumes:
-      - ./:/var/www/sylius
+      - ./:/var/www/html
       - ./docker/php-fpm/php-ini-overrides.ini:/usr/local/etc/php/conf.d/99-overrides.ini
 
   mysql:
     image: mysql
-    environment:
-      MYSQL_DATABASE: sylius_db
-      MYSQL_USER: db_user
-      MYSQL_PASSWORD: db_user
-      MYSQL_ROOT_PASSWORD:
+    ports:
+        - "3306:3306"
     volumes:
-      - ./docker/mysql/data:/var/lib/mysql
-
-  varnish:
-    build: docker/varnish/
+        - ./docker/mysql:/var/lib/mysql
+    environment:
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_DATABASE: dev
+        MYSQL_USER: dev
+        MYSQL_PASSWORD: dev
+#
+#  varnish:
+#    build: docker/varnish/
