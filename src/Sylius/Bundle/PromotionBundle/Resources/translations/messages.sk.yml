@@ -1,0 +1,31 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+sylius:
+    form:
+        promotion:
+            actions: Akcie
+            add_action: Pridať podmienku
+            add_rule: Pridať pravidlo
+            coupon_based: Používať kupóny
+            description: Popis
+            ends_at: Koniec
+            exclusive: Exkluzívne
+            name: Názov
+            priority: Priorita
+            rules: Pravidlá
+            starts_at: Začiatok
+            usage_limit: Limit použitia
+        promotion_action:
+            type: Typ
+        promotion_coupon:
+            usage_limit: Limit použitia
+        promotion_coupon_generator_instruction:
+            usage_limit: Limit použitia
+        promotion_rule:
+            cart_quantity_configuration:
+                count: Počet
+                equal: Rovná sa
+            shipping_country_configuration:
+                country: Štát
+            type: Typ

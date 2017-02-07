@@ -1,0 +1,15 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+sylius:
+    taxon:
+        code:
+            not_blank: Prosím, zadajte kód kategórie.
+            unique: Kategória s daným kódom už existuje.
+        name:
+            max_length: Názov kategórie nesmie byť dlhší ako 255 znakov.
+            not_blank: Zadajte názov kategórie.
+    taxonomy:
+        name:
+            max_length: Názov triedenia nesmie byť dlhší ako 255 znakov.
+            not_blank: Zadajte názov triedenia.
