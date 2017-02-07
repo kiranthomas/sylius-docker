@@ -1,77 +1,35 @@
-![Sylius](http://demo.sylius.org/assets/shop/img/logo.png)
+Docker - Sylius
 
-[![License](https://img.shields.io/packagist/l/Sylius/Sylius.svg)](https://packagist.org/packages/sylius/sylius)
-[![Version](https://img.shields.io/packagist/vpre/Sylius/Sylius.svg)](https://packagist.org/packages/sylius/sylius)
-[![Build status on Linux](https://img.shields.io/travis/Sylius/Sylius/master.svg)](http://travis-ci.org/Sylius/Sylius)
-[![Scrutinizer Quality Score](https://img.shields.io/scrutinizer/g/Sylius/Sylius.svg)](https://scrutinizer-ci.com/g/Sylius/Sylius/)
-[![Total Downloads](https://poser.pugx.org/sylius/sylius/downloads)](https://packagist.org/packages/sylius/sylius)
+NGINX-PHP FPM-MYSQL
 
-Sylius is the first decoupled eCommerce framework based on [**Symfony**](http://symfony.com) and [**Doctrine**](http://doctrine-project.org). 
-The highest quality of code, strong testing culture, built-in Agile (BDD) workflow and exceptional flexibility make it the best solution for application tailored to your business requirements. 
-Enjoy being an eCommerce Developer again!
+Clone this repository or place docker-compose.yml file and docker folder inside the Sylius root directory.
 
-We're using full-stack Behavior-Driven-Development, with [phpspec](http://phpspec.net) and [Behat](http://behat.org)
+Then, run
 
-Documentation
--------------
+docker-compose up -d
 
-Documentation is available at [docs.sylius.org](http://docs.sylius.org).
+Install the dependencies 
 
-Installation
-------------
+docker exec -it sylius_php composer install
 
-```bash
-$ wget http://getcomposer.org/composer.phar
-$ php composer.phar create-project -s beta sylius/sylius-standard project
-$ cd project
-$ npm install
-$ npm run gulp
-$ php bin/console sylius:install
-$ php bin/console server:start
-$ open http://localhost:8000/
-```
+adjust the parameters to connect to db
 
-To use Vagrant, see [this repository](http://github.com/Sylius/Vagrant).
+Install sylius dev
 
-Troubleshooting
----------------
+docker exec -it sylius_php php bin/console sylius:install
 
-If something goes wrong, errors & exceptions are logged at the application level:
+docker exec -it sylius_php npm install
 
-```bash
-$ tail -f var/logs/prod.log
-$ tail -f var/logs/dev.log
-```
+docker exec -it sylius_php npm run gulp
 
-If you are using the supplied Vagrant development environment, please see the related [Troubleshooting guide](http://github.com/Sylius/Vagrant/README.md#Troubleshooting) for more information.
+visit http://localhost:8080/app_dev.php
 
-Contributing
-------------
 
-Would like to help us and build the most developer-friendly eCommerce platform? Start from reading our [Contributing Guide](http://docs.sylius.org/en/latest/contributing/index.html)!
 
-Stay Updated
-------------
+ 
+ 
 
-If you want to keep up with the updates, [follow the official Sylius account on Twitter](http://twitter.com/Sylius) and [like us on Facebook](https://www.facebook.com/SyliusEcommerce/).
 
-Bug Tracking
-------------
 
-If you want to report a bug or suggest an idea, please use [GitHub issues](https://github.com/Sylius/Sylius/issues).
 
-Community Support
------------------
 
-Have a question? Join our [Slack](https://slackinvite.me/to/sylius-devs) or post it on [StackOverflow](http://stackoverflow.com) tagged with "sylius". You can also join our [group on Facebook](https://www.facebook.com/groups/sylius/)!
-
-MIT License
------------
-
-Sylius is completely free and released under the [MIT License](https://github.com/Sylius/Sylius/blob/master/LICENSE).
-
-Authors
--------
-
-Sylius was originally created by [Paweł Jędrzejewski](http://pjedrzejewski.com).
-See the list of [contributors from our awesome community](https://github.com/Sylius/Sylius/contributors).

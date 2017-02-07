@@ -11,8 +11,6 @@ services:
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
     links:
       - fpm
-#      - varnish
-
   fpm:
     build: docker/php-fpm/
     container_name: sylius_php
@@ -33,6 +31,3 @@ services:
         MYSQL_DATABASE: dev
         MYSQL_USER: dev
         MYSQL_PASSWORD: dev
-#
-#  varnish:
-#    build: docker/varnish/
